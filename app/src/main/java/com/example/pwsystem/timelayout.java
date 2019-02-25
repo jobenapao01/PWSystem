@@ -160,7 +160,7 @@ public class timelayout extends AppCompatActivity {
 
                 databaseReference_sched = db.getReference("Schedule");
                 String id = databaseReference_sched.push().getKey();
-                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getHours()), "monday");
+                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getMinutes()), "monday");
                 databaseReference_sched.child(id).setValue(scheduleObj);
                 isSaved = true;
             } else {
@@ -194,7 +194,7 @@ public class timelayout extends AppCompatActivity {
 
                 databaseReference_sched = db.getReference("Schedule");
                 String id = databaseReference_sched.push().getKey();
-                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getHours()), "tuesday");
+                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getMinutes()), "tuesday");
                 databaseReference_sched.child(id).setValue(scheduleObj);
                 isSaved = true;
             } else {
@@ -228,7 +228,7 @@ public class timelayout extends AppCompatActivity {
 
                 databaseReference_sched = db.getReference("Schedule");
                 String id = databaseReference_sched.push().getKey();
-                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getHours()), "wednesday");
+                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getMinutes()), "wednesday");
                 databaseReference_sched.child(id).setValue(scheduleObj);
                 isSaved = true;
             } else {
@@ -262,7 +262,7 @@ public class timelayout extends AppCompatActivity {
 
                 databaseReference_sched = db.getReference("Schedule");
                 String id = databaseReference_sched.push().getKey();
-                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getHours()), "thursday");
+                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getMinutes()), "thursday");
                 databaseReference_sched.child(id).setValue(scheduleObj);
                 isSaved = true;
             } else {
@@ -296,7 +296,7 @@ public class timelayout extends AppCompatActivity {
 
                 databaseReference_sched = db.getReference("Schedule");
                 String id = databaseReference_sched.push().getKey();
-                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getHours()), "friday");
+                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getMinutes()), "friday");
                 databaseReference_sched.child(id).setValue(scheduleObj);
                 isSaved = true;
             } else {
@@ -330,7 +330,7 @@ public class timelayout extends AppCompatActivity {
 
                 databaseReference_sched = db.getReference("Schedule");
                 String id = databaseReference_sched.push().getKey();
-                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getHours()), "saturday");
+                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getMinutes()), "saturday");
                 databaseReference_sched.child(id).setValue(scheduleObj);
                 isSaved = true;
             } else {
@@ -364,7 +364,7 @@ public class timelayout extends AppCompatActivity {
 
                 databaseReference_sched = db.getReference("Schedule");
                 String id = databaseReference_sched.push().getKey();
-                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getHours()), "sunday");
+                Schedule scheduleObj = new Schedule(String.format("%02d", getHours()), String.format("%02d", getMinutes()), "sunday");
                 databaseReference_sched.child(id).setValue(scheduleObj);
                 isSaved = true;
             } else {
@@ -379,10 +379,8 @@ public class timelayout extends AppCompatActivity {
 
     private String retrieveData(DataSnapshot dataSnapshot,String day) {
         StringBuilder data = new StringBuilder();
-        //for(DataSnapshot ds : dataSnapshot.getChildren()) {
             Log.v("test1",String.valueOf(dataSnapshot.child(day).getValue()));
             data.append(dataSnapshot.child(day).getValue());
-        //}
         return data.toString();
     }
 }

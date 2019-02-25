@@ -38,8 +38,8 @@ public class logsActivity extends AppCompatActivity {
         adapter = new FirebaseRecyclerAdapter<Schedule, ScheduleViewHolder>(options) {
             @Override
             protected void onBindViewHolder(ScheduleViewHolder holder, int position,Schedule model) {
-                //holder.tv_day.setText(model.getDay());
-                holder.tv_time.setText("d");
+                holder.tv_day.setText(model.getDay());
+                holder.tv_time.setText(String.format("%s:%s", model.getHours(), model.getMinutes()));
             }
 
             @Override

@@ -1,10 +1,20 @@
 package com.example.pwsystem;
 
 import android.content.Intent;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
+
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
@@ -14,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSetSchedule;
     private Button button2;
     private Button btnPower;
+    Button btn;
+    EditText numbTxt;
+    String sNum;
+
 
     FirebaseDatabase db = FirebaseDatabase.getInstance();
     DatabaseReference databaseReference;
@@ -23,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FirebaseApp.initializeApp(this);
-
         btnPower = (Button) findViewById(R.id.btnPower);
         btnPower.setOnClickListener(new View.OnClickListener() {
 
@@ -56,4 +69,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.xml.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.Logs:
+                Toast.makeText(this, "LOGS", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.About:
+                Toast.makeText(this, "ABOUT", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
+
+
+
+

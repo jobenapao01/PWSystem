@@ -39,7 +39,15 @@ public class logsActivity extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(ScheduleViewHolder holder, int position,Schedule model) {
                 holder.tv_day.setText(model.getDay());
-                holder.tv_time.setText(String.format("%s:%s", model.getHours(), model.getMinutes()));
+                if(Integer.valueOf(model.getHours()) > 12) {
+                    if(Integer.valueOf(model.getHours()) == 00) {
+                        holder.tv_time.setText(String.format("%s:%s AM", 12, model.getMinutes()));
+                    } else {
+                        holder.tv_time.setText(String.format("%s:%s AM", model.getHours(), model.getMinutes()));
+                    }
+                } else {
+                    holder.tv_time.setText(String.format("%s:%s PM", Integer.valueOf(model.getHours()) - 12, model.getMinutes()));
+                }
             }
 
             @Override

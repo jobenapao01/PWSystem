@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".optionAbout"
+    android:background="@drawable/bg4">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="177dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="117dp"
+        android:background="@drawable/custom_gradient"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="      Thesis Project"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="260dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="86dp"
+        android:background="@drawable/custom_gradient"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="  Mobile Plant Watering System"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="93dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="159dp"
+        android:background="@drawable/custom_gradient"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="   Group 4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+</android.support.constraint.ConstraintLayout>

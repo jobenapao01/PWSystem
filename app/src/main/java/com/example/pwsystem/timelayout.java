@@ -10,7 +10,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TimePicker;
 
-import com.example.pwsystem.Model.Day;
 import com.example.pwsystem.Model.Schedule;
 
 import com.google.firebase.database.DataSnapshot;
@@ -45,6 +44,7 @@ public class timelayout extends AppCompatActivity {
     private  String day;
     private String[] scheduleData = new String[7];
     private String dataSchedule;
+
     public int getHours() {
         return hours;
     }
@@ -74,7 +74,6 @@ public class timelayout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_timelayout);
-        Log.v("Error", "start");
 
         timePicker = (TimePicker) findViewById(R.id.timePicker);
 
@@ -85,7 +84,6 @@ public class timelayout extends AppCompatActivity {
         chkThursday = findViewById(R.id.chkThursday);
         chkFriday = findViewById(R.id.chkFriday);
         chkSaturday = findViewById(R.id.chkSaturday);
-        btnBack = findViewById(R.id.btnBack);
         btnSet = findViewById(R.id.btnSet);
 
         databaseReference = db.getReference("MainSchedule");
@@ -93,7 +91,6 @@ public class timelayout extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Log.v("Error", "dataerror");
                 scheduleData[0] = retrieveData(dataSnapshot,"monday");
                 scheduleData[1] = retrieveData(dataSnapshot,"tuesday");
                 scheduleData[2] = retrieveData(dataSnapshot,"wednesday");

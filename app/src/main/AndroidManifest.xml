@@ -12,9 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".optionAbout"></activity>
+        <activity android:name=".optionLogs" />
+        <activity android:name=".StatusActivity" />
+
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/menu_main" />
+            android:resource="@layout/menu_main" />
 
         <activity android:name=".logsActivity" />
         <activity android:name=".timelayout" />
